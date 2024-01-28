@@ -1,0 +1,19 @@
+sequenceDiagram
+    participant U as User
+    participant P1 as Pipe 1 (Input Data)
+    participant AS as Authentication Service (Filter)
+    participant DB as Database (Sink/Source)
+    participant P2 as Pipe 2 (Email Info)
+    participant ES as Emailer Service (Filter)
+    participant E as Email Service (Data Sink)
+
+    U->>+P1: Registers (email, username, password)
+    P1->>+AS: Passes Registration Data
+    AS->>+DB: Save User Data
+    DB-->>-AS: Confirmation
+    AS->>+P2: Prepare Email Info
+    P2->>+ES: Passes Email Info
+    ES->>+E: Sends Email
+    E-->>-ES: Email Sent Confirmation
+    ES-->>-AS: Email Sent
+    AS-->>-U: Registration Complete
