@@ -1,0 +1,26 @@
+name: Convert Markdown to PDF
+
+on:
+  push:
+    branches:
+      - main 
+
+jobs:
+  convert:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4.1.1
+
+    - name: Install Pandoc
+      run: sudo apt-get install pandoc texlive texlive-xetex texlive-fonts-recommended texlive-generic-recommended texlive-latex-extra
+
+    - name: Convert Markdown to PDF
+      run: pandoc PROJECT.md -o PROJECT.pdf
+
+    - name: Upload PDF as Artifact
+      uses: actions/upload-artifact@v4.3.0
+      with:
+        name: PROJECT PDF
+        path: PROJECT.pdf
