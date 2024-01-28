@@ -13,8 +13,10 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4.1.1
 
-    - name: Install Pandoc
-      run: sudo apt-get install pandoc texlive texlive-xetex texlive-fonts-recommended texlive-generic-recommended texlive-latex-extra
+    - name: Install Pandoc and LaTeX Packages
+      run: |
+        sudo apt-get update
+        sudo apt-get install pandoc texlive texlive-xetex texlive-fonts-recommended texlive-latex-extra
 
     - name: Convert Markdown to PDF
       run: pandoc PROJECT.md -o PROJECT.pdf
