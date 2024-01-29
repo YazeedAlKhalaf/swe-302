@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.1" xmlns:uml="http://schema.omg.org/spec/UML/2.0" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1">
+	<xmi:Documentation exporter="StarUML" exporterVersion="2.0"/>
+	<uml:Model xmi:id="AAAAAAGNVPxU5QX5JbE=" xmi:type="uml:Model" name="RootModel">
+		<packagedElement xmi:id="AAAAAAFF+qBWK6M3Z8Y=" name="Model" visibility="public" xmi:type="uml:Model">
+			<packagedElement xmi:id="AAAAAAGNLOPF2fKdYNk=" name="Erbut" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Component" isIndirectlyInstantiated="true">
+				<ownedMember xmi:id="AAAAAAGNLQaEnfX1aOc=" visibility="public" xmi:type="uml:Dependency" client="AAAAAAGNLOPF2fKdYNk=" supplier="AAAAAAGNLOmmBPOniFs="/>
+				<ownedMember xmi:id="AAAAAAGNLQactfYGBmE=" visibility="public" xmi:type="uml:Dependency" client="AAAAAAGNLOPF2fKdYNk=" supplier="AAAAAAGNLO2xZPRDUkg="/>
+				<ownedMember xmi:id="AAAAAAGNLQa0A/YXYWk=" visibility="public" xmi:type="uml:Dependency" client="AAAAAAGNLOPF2fKdYNk=" supplier="AAAAAAGNLOq6qPPPGFo="/>
+				<ownedMember xmi:id="AAAAAAGNLQbbxvYoCdY=" visibility="public" xmi:type="uml:Dependency" client="AAAAAAGNLOPF2fKdYNk=" supplier="AAAAAAGNLOzmF/QKJG0="/>
+				<ownedMember xmi:id="AAAAAAGNLQbuAfY5dO0=" visibility="public" xmi:type="uml:Dependency" client="AAAAAAGNLOPF2fKdYNk=" supplier="AAAAAAGNLOyUt/PvIJY="/>
+				<xmi:Extension extender="StarUML">
+					<stereotype value="subsystem"/>
+				</xmi:Extension>
+			</packagedElement>
+			<packagedElement xmi:id="AAAAAAGNUZCf/YIhoPY=" name="Erbut%20System" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Component" isIndirectlyInstantiated="true">
+				<ownedMember xmi:id="AAAAAAGNLOYL+vLwQfs=" name="Database" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Component" isIndirectlyInstantiated="true">
+					<ownedMember xmi:id="AAAAAAGNLOh9JvNorjo=" visibility="public" xmi:type="uml:Dependency" client="AAAAAAGNLOYL+vLwQfs=" supplier="AAAAAAGNLOPF2fKdYNk="/>
+					<xmi:Extension extender="StarUML">
+						<stereotype value="subsystem"/>
+					</xmi:Extension>
+				</ownedMember>
+				<ownedMember xmi:id="AAAAAAGNLOjFLPN5Nt8=" name="Authentication" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Component" isIndirectlyInstantiated="true">
+					<ownedMember xmi:id="AAAAAAGNLOlziPOVzY8=" visibility="public" xmi:type="uml:Dependency" client="AAAAAAGNLOjFLPN5Nt8=" supplier="AAAAAAGNLOPF2fKdYNk="/>
+					<ownedMember xmi:id="AAAAAAGNUZ7kiYPcAWw=" visibility="public" xmi:type="uml:Dependency" client="AAAAAAGNLOjFLPN5Nt8=" supplier="AAAAAAGNUZTbuYMwXhk="/>
+					<ownedMember xmi:id="AAAAAAGNUZ8/PIQD5gc=" visibility="public" xmi:type="uml:Dependency" client="AAAAAAGNLOjFLPN5Nt8=" supplier="AAAAAAGNLOyUt/PvIJY="/>
+					<ownedMember xmi:id="AAAAAAGNUZ9Rq4QUU5g=" visibility="public" xmi:type="uml:Dependency" client="AAAAAAGNLOjFLPN5Nt8=" supplier="AAAAAAGNLOYL+vLwQfs="/>
+					<xmi:Extension extender="StarUML">
+						<stereotype value="subsystem"/>
+					</xmi:Extension>
+				</ownedMember>
+				<ownedMember xmi:id="AAAAAAGNUZ3TwYOV4eA=" name="Subscribe" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Component" isIndirectlyInstantiated="true">
+					<ownedMember xmi:id="AAAAAAGNUZ6qRYO3rIU=" visibility="public" xmi:type="uml:Dependency" client="AAAAAAGNUZ3TwYOV4eA=" supplier="AAAAAAGNLOmmBPOniFs="/>
+					<xmi:Extension extender="StarUML">
+						<stereotype value="subsystem"/>
+					</xmi:Extension>
+				</ownedMember>
+				<ownedMember xmi:id="AAAAAAGNUZTbuYMwXhk=" name="Emailer" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Component" isIndirectlyInstantiated="true">
+					<ownedMember xmi:id="AAAAAAGNUZ7MI4PKfVc=" visibility="public" xmi:type="uml:Dependency" client="AAAAAAGNUZTbuYMwXhk=" supplier="AAAAAAGNLOq6qPPPGFo="/>
+					<xmi:Extension extender="StarUML">
+						<stereotype value="subsystem"/>
+					</xmi:Extension>
+				</ownedMember>
+				<ownedMember xmi:id="AAAAAAGNUZPr3IMUEUI=" name="Analytics" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Component" isIndirectlyInstantiated="true">
+					<ownedMember xmi:id="AAAAAAGNUZ90sYQl7og=" visibility="public" xmi:type="uml:Dependency" client="AAAAAAGNUZPr3IMUEUI=" supplier="AAAAAAGNLOYL+vLwQfs="/>
+					<ownedMember xmi:id="AAAAAAGNUaDURoSN4ts=" visibility="public" xmi:type="uml:Dependency" client="AAAAAAGNUZPr3IMUEUI=" supplier="AAAAAAGNLO2xZPRDUkg="/>
+					<xmi:Extension extender="StarUML">
+						<stereotype value="subsystem"/>
+					</xmi:Extension>
+				</ownedMember>
+				<ownedMember xmi:id="AAAAAAGNUZ1OaYN3/7Q=" name="Image%20Uploader" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Component" isIndirectlyInstantiated="true">
+					<ownedMember xmi:id="AAAAAAGNUZ8OFIPusPc=" visibility="public" xmi:type="uml:Dependency" client="AAAAAAGNUZ1OaYN3/7Q=" supplier="AAAAAAGNLOzmF/QKJG0="/>
+					<xmi:Extension extender="StarUML">
+						<stereotype value="subsystem"/>
+					</xmi:Extension>
+				</ownedMember>
+				<ownedMember xmi:id="AAAAAAGNUZK8Y4L4vq4=" name="Linkfolio%20Parser" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Component" isIndirectlyInstantiated="true">
+					<ownedMember xmi:id="AAAAAAGNUaG51oTKbiY=" visibility="public" xmi:type="uml:Dependency" client="AAAAAAGNUZK8Y4L4vq4=" supplier="AAAAAAGNLOYL+vLwQfs="/>
+					<xmi:Extension extender="StarUML">
+						<stereotype value="subsystem"/>
+					</xmi:Extension>
+				</ownedMember>
+				<ownedMember xmi:id="AAAAAAGNUZ+uAoQ3+WY=" name="Website" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Component" isIndirectlyInstantiated="true">
+					<ownedMember xmi:id="AAAAAAGNUaAG24RUtwc=" visibility="public" xmi:type="uml:Dependency" client="AAAAAAGNUZ+uAoQ3+WY=" supplier="AAAAAAGNLOYL+vLwQfs="/>
+					<xmi:Extension extender="StarUML">
+						<stereotype value="subsystem"/>
+					</xmi:Extension>
+				</ownedMember>
+				<ownedMember xmi:id="AAAAAAGNUaB1EoRt17g=" name="Webhook%20Handler" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Component" isIndirectlyInstantiated="true">
+					<xmi:Extension extender="StarUML">
+						<stereotype value="subsystem"/>
+					</xmi:Extension>
+				</ownedMember>
+				<xmi:Extension extender="StarUML">
+					<stereotype value="subsystem"/>
+				</xmi:Extension>
+			</packagedElement>
+			<packagedElement xmi:id="AAAAAAGNUZGM6IJ2abA=" name="External%20Systems" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Component" isIndirectlyInstantiated="true">
+				<ownedMember xmi:id="AAAAAAGNLOq6qPPPGFo=" name="Resend" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Component" isIndirectlyInstantiated="true">
+					<xmi:Extension extender="StarUML">
+						<stereotype value="subsystem"/>
+					</xmi:Extension>
+				</ownedMember>
+				<ownedMember xmi:id="AAAAAAGNLOzmF/QKJG0=" name="Google%20Cloud" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Component" isIndirectlyInstantiated="true">
+					<xmi:Extension extender="StarUML">
+						<stereotype value="subsystem"/>
+					</xmi:Extension>
+				</ownedMember>
+				<ownedMember xmi:id="AAAAAAGNLOyUt/PvIJY=" name="Sign%20In%20with%20Apple" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Component" isIndirectlyInstantiated="true">
+					<xmi:Extension extender="StarUML">
+						<stereotype value="subsystem"/>
+					</xmi:Extension>
+				</ownedMember>
+				<ownedMember xmi:id="AAAAAAGNLOmmBPOniFs=" name="Stripe" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Component" isIndirectlyInstantiated="true">
+					<ownedMember xmi:id="AAAAAAGNUaFq6ISu0qU=" visibility="public" xmi:type="uml:Dependency" client="AAAAAAGNLOmmBPOniFs=" supplier="AAAAAAGNUaB1EoRt17g="/>
+					<xmi:Extension extender="StarUML">
+						<stereotype value="subsystem"/>
+					</xmi:Extension>
+				</ownedMember>
+				<ownedMember xmi:id="AAAAAAGNLO2xZPRDUkg=" name="Google%20Analytics" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Component" isIndirectlyInstantiated="true">
+					<xmi:Extension extender="StarUML">
+						<stereotype value="subsystem"/>
+					</xmi:Extension>
+				</ownedMember>
+				<xmi:Extension extender="StarUML">
+					<stereotype value="subsystem"/>
+				</xmi:Extension>
+			</packagedElement>
+			<packagedElement xmi:id="AAAAAAGNUZXWgINL4Rk=" name="Subsystem1" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Component" isIndirectlyInstantiated="true">
+				<xmi:Extension extender="StarUML">
+					<stereotype value="subsystem"/>
+				</xmi:Extension>
+			</packagedElement>
+		</packagedElement>
+	</uml:Model>
+</xmi:XMI>
