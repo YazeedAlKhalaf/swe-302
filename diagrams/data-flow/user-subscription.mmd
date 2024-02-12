@@ -1,0 +1,6 @@
+graph TD
+    B(Payment Info Entry) -->|Payment details| C
+    C(Stripe Payment Processing) -->|Webhook event| D
+    D(Webhook Handling) -->|Update signal| E
+    E(Erbut Database Update) -->|Confirmation| F
+    F(Subscription Active)

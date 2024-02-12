@@ -37,10 +37,10 @@ This section will showcase the system from an internal point of view. Using UML 
 \subsection{Big Picture}
 
 \begin{figure}[h!]
-\centering
-\includegraphics[width=0.8\textwidth]{images/erbut-big-picture.png}
-\caption{Big Picture Diagram of Erbut}
-\label{fig:bigpicture}
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/erbut-big-picture.png}
+    \caption{Big Picture Diagram of Erbut}
+    \label{fig:bigpicture}
 \end{figure}
 
 The Big Picture diagram sketch seen in Figure \ref{fig:bigpicture} provides a high-level overview of Erbut’s system architecture, highlighting its backend central to operations, integrating with services like Vercel, Stripe, Resend, Sign in with Apple, Google OAuth, Google Cloud, and Google Analytics.
@@ -48,10 +48,10 @@ The Big Picture diagram sketch seen in Figure \ref{fig:bigpicture} provides a hi
 \subsection{Abstract View}
 
 \begin{figure}[h!]
-\centering
-\includegraphics[width=0.8\textwidth]{images/erbut-abstract-view.png}
-\caption{Black Box Diagram of the System}
-\label{fig:abstractview}
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/erbut-abstract-view.png}
+    \caption{Black Box Diagram of the System}
+    \label{fig:abstractview}
 \end{figure}
 
 The abstract view diagram seen in Figure \ref{fig:abstractview} helps us understand the inputs the system requires and the outputs it will produce. A glance at the diagram shows that we use Customer Details to create an account initially and then to verify the user's identity in subsequent interactions. Website Details are used to construct the Erbut Linkfolio. Additionally, Stripe webhooks provide real-time information about our users’ subscription statuses.
@@ -59,10 +59,10 @@ The abstract view diagram seen in Figure \ref{fig:abstractview} helps us underst
 \subsection{Subsystem View}
 
 \begin{figure}[h!]
-\centering
-\includegraphics[width=0.8\textwidth]{images/erbut-package-diagram.png}
-\caption{Package Diagram of Erbut}
-\label{fig:subsystemview}
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/erbut-package-diagram.png}
+    \caption{Package Diagram of Erbut}
+    \label{fig:subsystemview}
 \end{figure}
 
 The subsystem diagram found below in Figure \ref{fig:subsystemview} represents all the components that our system (Erbut) consists of internally and externally. External subsystems represent the components we are using directly without building them from scratch. On the other hand, internal subsystems are built by us from the ground up.
@@ -122,5 +122,48 @@ Responsible for handling all payment transactions, including processing customer
 \subsection{Resend (\texttt{external})}
 
 Responsible for automated email communications, such as account verification, notification, and other automated email responses based on user actions or system triggers.
+
+\section{Data Flow of Erbut}
+
+\subsection{Batch Sequential}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/data-flow/user-subscription-batch-sequential.png}
+    \caption{Batch Sequential of Website Creation}
+    \label{fig:batch-sequential-user-subscription}
+\end{figure}
+
+In Figure \ref{fig:batch-sequential-user-subscription} below, the diagram shows how the data in the subscription process of Erbut. Below are the steps explaining how and when the interactions in the diagram happens:
+
+\begin{enumerate}
+    \item The Payment Info is entered and Payment Details are extracted from it.
+    \item The Payment Details are now an input to the Stripe Payment Processing, which is an external system, and the output is is a webhook event.
+    \item The webhook event is now an input to the Webhook Handler, which is an internal system of Erbut, and the output is an update signal for the database.
+    \item The update signal for the database is now an input to the Database, which is an internal system of Erbut, and the output is a confirmation signal.
+    \item The confirmation signal shows that the subscription is active now.
+\end{enumerate}
+
+\subsection{Pipe and Filter}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/data-flow/registration-pipe-and-filter.png}
+    \caption{Pipe and Filter of User Registration}
+    \label{fig:pip-and-filter-user-registration}
+\end{figure}
+
+In Figure \ref{fig:pip-and-filter-user-registration} below, the diagram shows how the data in the registration process of Erbut flows from one sub system to another. Below are the steps explaining how and when the interactions in the diagram happens:
+
+\begin{enumerate}
+    \item The Input Data pipe reads the email, username, and password from the User filter and then writes this registration data to the Authentication Service filter.
+    \item Then the Authentication Service filter reads the passed registration data and writes it to the Database, and waits for confirmation.
+    \item Once the confirmation is received, the Authentication Service filter writes the Email Info to the Email Info pipe.
+    \item The Email Info pipe reads the email and writes it to the Emailer filter.
+    \item The Email Data pipe reads the Email Info with Template and writes it to the Resend Service filter, which is our data sink.
+\end{enumerate}
+
+
+    
 
 \end{document}
