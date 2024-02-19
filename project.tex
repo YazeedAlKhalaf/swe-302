@@ -1,4 +1,4 @@
-\documentclass{article}
+\documentclass[a4paper]{report}
 \usepackage{graphicx} % Required for inserting images
 \usepackage[utf8]{inputenc} % For UTF-8 input
 \usepackage{hyperref} % For hyperlinks
@@ -20,7 +20,7 @@
 
 \newpage
 
-\section*{Abstract}
+\chapter*{Abstract}
 
 Erbut presents a dynamic, web-based platform enabling users to create and manage personalized 'Erbuts'—elegant linkfolios showcasing a curated list of links. These linkfolios, hosted as subdomains on erbut.me or linked to custom domains, offer a unique way to display online presence.
 
@@ -30,11 +30,11 @@ This paper extensively explores the design and architecture of Erbut, focusing o
 
 \newpage
 
-\section{System Overview}
+\chapter{System Overview}
 
 This section will showcase the system from an internal point of view. Using UML diagrams to draw the system, reading this section should allow the reader to understand how the system is built on a high level.
 
-\subsection{Big Picture}
+\section{Big Picture}
 
 \begin{figure}[h!]
     \centering
@@ -45,7 +45,7 @@ This section will showcase the system from an internal point of view. Using UML 
 
 The Big Picture diagram sketch seen in Figure \ref{fig:bigpicture} provides a high-level overview of Erbut’s system architecture, highlighting its backend central to operations, integrating with services like Vercel, Stripe, Resend, Sign in with Apple, Google OAuth, Google Cloud, and Google Analytics.
 
-\subsection{Abstract View}
+\section{Abstract View}
 
 \begin{figure}[h!]
     \centering
@@ -56,7 +56,7 @@ The Big Picture diagram sketch seen in Figure \ref{fig:bigpicture} provides a hi
 
 The abstract view diagram seen in Figure \ref{fig:abstractview} helps us understand the inputs the system requires and the outputs it will produce. A glance at the diagram shows that we use Customer Details to create an account initially and then to verify the user's identity in subsequent interactions. Website Details are used to construct the Erbut Linkfolio. Additionally, Stripe webhooks provide real-time information about our users’ subscription statuses.
 
-\subsection{Subsystem View}
+\section{Subsystem View}
 
 \begin{figure}[h!]
     \centering
@@ -67,65 +67,65 @@ The abstract view diagram seen in Figure \ref{fig:abstractview} helps us underst
 
 The subsystem diagram found below in Figure \ref{fig:subsystemview} represents all the components that our system (Erbut) consists of internally and externally. External subsystems represent the components we are using directly without building them from scratch. On the other hand, internal subsystems are built by us from the ground up.
 
-\section{Functionalities of The Subsystems}
+\chapter{Functionalities of The Subsystems}
 
 This section highlights the description of the sub-systems previously presented in the Sub-System View of Erbut.
 
-\subsection{Database (\texttt{internal})}
+\section{Database (\texttt{internal})}
 
 Stores the data for the system, such as our customers’ details and their website data.
 
-\subsection{Authentication (\texttt{internal})}
+\section{Authentication (\texttt{internal})}
 
 Responsible for the authentication of users whether it’s their first time accessing the system or a regular user. Integrates with Google OAuth and Sign in with Apple to offer more authentication options.
 
-\subsection{Website (\texttt{internal})}
+\section{Website (\texttt{internal})}
 
 API for the front-end to allow the customer to create and manage websites (Erbuts).
 
-\subsection{Linkfolio Parser (\texttt{internal})}
+\section{Linkfolio Parser (\texttt{internal})}
 
 It fills out the template of the Erbut based on the data in the database. It knows which Erbut to query by its subdomain. It then parses the template and fills it with data, then finally returns it to the client.
 
-\subsection{Emailer (\texttt{internal})}
+\section{Emailer (\texttt{internal})}
 
 This service is responsible for sending emails. Other systems like Authentication depend on it to send verification and reset password emails. It accepts email and a template id.
 
-\subsection{Image Uploader (\texttt{internal})}
+\section{Image Uploader (\texttt{internal})}
 
 This service allows customers to upload an image and get a URL for it. This is helpful to put images in their Erbuts by hosting it on our servers.
 
-\subsection{Subscribe (\texttt{internal})}
+\section{Subscribe (\texttt{internal})}
 
 This service allows the customer to manage their billing information and subscribe or change their plan.
 
-\subsection{Webhook Handler (\texttt{internal})}
+\section{Webhook Handler (\texttt{internal})}
 
 This service allows Stripe, our payment gateway, to send us updates about our customers' billing state. Whether they are subscribed, paid, did not pay, or even are late on payment.
 
-\subsection{Analytics (\texttt{internal})}
+\section{Analytics (\texttt{internal})}
 
 This service collects and aggregates data from the Erbuts and saves it for our customers to view and take decisions based on it.
 
-\subsection{Google Analytics (\texttt{external})}
+\section{Google Analytics (\texttt{external})}
 
 Collects and analyzes data of visitors and their behaviors when visiting a customer’s Erbut (Linkfolio).
 
-\subsection{Google Cloud (\texttt{external})}
+\section{Google Cloud (\texttt{external})}
 
 Responsible for providing computing resources, data storage, and hosting the system backend services. It’s a cloud computing service that runs on the same infrastructure that Google uses for its own products.
 
-\subsection{Stripe (\texttt{external})}
+\section{Stripe (\texttt{external})}
 
 Responsible for handling all payment transactions, including processing customer credit cards, managing secure payment information, and handling subscription billing services.
 
-\subsection{Resend (\texttt{external})}
+\section{Resend (\texttt{external})}
 
 Responsible for automated email communications, such as account verification, notification, and other automated email responses based on user actions or system triggers.
 
-\section{Data Flow of Erbut}
+\chapter{Data Flow of Erbut}
 
-\subsection{Batch Sequential}
+\section{Batch Sequential}
 
 \begin{figure}[h!]
     \centering
@@ -144,7 +144,7 @@ In Figure \ref{fig:batch-sequential-user-subscription} below, the diagram shows 
     \item The confirmation signal shows that the subscription is active now.
 \end{enumerate}
 
-\subsection{Pipe and Filter}
+\section{Pipe and Filter}
 
 \begin{figure}[h!]
     \centering
