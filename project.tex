@@ -1,8 +1,10 @@
 \documentclass[a4paper]{report}
-\usepackage{graphicx} % Required for inserting images
-\usepackage[utf8]{inputenc} % For UTF-8 input
-\usepackage{hyperref} % For hyperlinks
-\usepackage{url} % For handling URLs
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage{xcolor} % Load this before hyperref
+\definecolor{softblue}{RGB}{70,130,180}
+\usepackage[colorlinks=true, linkcolor=softblue, citecolor=softblue, filecolor=softblue, urlcolor=softblue]{hyperref}
+\usepackage{url}
 
 \title{Design \& Architecture of Erbut, An Elegant Web Based Linkfolio}
 \author{
@@ -19,6 +21,8 @@
 \maketitle
 
 \newpage
+
+\tableofcontents
 
 \chapter*{Abstract}
 
