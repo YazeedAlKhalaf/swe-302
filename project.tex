@@ -163,7 +163,27 @@ In Figure \ref{fig:pip-and-filter-user-registration} below, the diagram shows ho
     \item The Email Data pipe reads the Email Info with Template and writes it to the Resend Service filter, which is our data sink.
 \end{enumerate}
 
+\chapter{Repository Diagram}
 
-    
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/erbut-repository-diagram.png}
+    \caption{Repository Diagram of Erbut}
+    \label{fig:repository-diagram}
+\end{figure}
+
+The Repository Diagram of Erbut, shown in Figure \ref{fig:repository-diagram}, illustrates the system's centralized data management structure, highlighting how different subsystems interact with the central repository. This visual representation underscores the central database's role as the core repository where all data is stored and accessed, ensuring data consistency and integrity across the system.
+
+\begin{enumerate}
+    \item \textbf{Central Database (Repository)}: The primary storage for all data related to users, their linkfolios, subscription information, and analytics, acting as the single source of truth.
+    \item \textbf{Authentication System}: Retrieves and verifies user credentials from the central database, managing secure login processes and session tokens.
+    \item \textbf{Website Management System}: Utilizes the central database to manage data related to user-created linkfolios, including layouts, links, and custom domains.
+    \item \textbf{Subscription Management System}: Manages user subscription details and interfaces with external systems like Stripe to process transactions and update subscription statuses.
+    \item \textbf{Analytics System}: Stores and analyzes data on user interactions with linkfolios, providing insights into performance based on information stored in the central database.
+    \item \textbf{Email Communication System}: Sends automated emails for various user notifications, accessing contact information from the central database to ensure accuracy.
+    \item \textbf{External Integration Points}: Includes connections to services like Stripe and Google Analytics, synchronizing data with the central database for cohesive system functionality.
+\end{enumerate}
+
+This diagram emphasizes the significance of the central database in facilitating efficient data flow and interaction between subsystems and external services, ensuring the Erbut platform operates cohesively.
 
 \end{document}
