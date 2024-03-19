@@ -190,4 +190,19 @@ The Repository Diagram of Erbut, shown in Figure \ref{fig:repository-diagram}, i
 
 This diagram emphasizes the significance of the central database in facilitating efficient data flow and interaction between subsystems and external services, ensuring the Erbut platform operates cohesively.
 
+\chapter{Architecture}
+
+The architecture of Erbut is elegant and scalable, designed to accommodate the platform's dynamic and user-centric functionalities. The system's architecture is based on a layered structure, ensuring a clear separation of concerns and modularity. The layered architecture diagram showcases the system's presentation, application, and data layers, each responsible for specific functionalities.
+
+\section{Layered Architecture}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/erbut-layered-architecture.png}
+    \caption{Layered Architecture of Erbut}
+    \label{fig:layered-architecture}
+\end{figure}
+
+In the Layered Architecture diagram shown in Figure \ref{fig:layered-architecture}, the system is divided into 3 layers, each responsible for specific functionalities. The frontend is the layer that the user interacts with. It is built in React. The frontend communicates with the backend through an API. This API is a gRPC API. The backend is built in Go. The backend communicates with the database, which is a PostgreSQL database. So the communication happens through SQL.
+
 \end{document}
