@@ -2,7 +2,6 @@
   <configuration default="false" name="Tomcat Docker Deployment" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
     <deployment type="dockerfile">
       <settings>
-        <option name="imageTag" value="soa-task:latest" />
         <option name="containerName" value="" />
         <option name="portBindings">
           <list>
