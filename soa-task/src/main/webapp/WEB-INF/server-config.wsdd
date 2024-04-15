@@ -4,4 +4,9 @@
         <parameter name="className" value="org.awesomedev.soatask.TodoServiceImpl"/>
         <parameter name="allowedMethods" value="*"/>
     </service>
+    <transport name="http">
+        <requestFlow>
+            <handler type="java:org.apache.axis.handlers.http.URLMapper"/>
+        </requestFlow>
+    </transport>
 </deployment>
