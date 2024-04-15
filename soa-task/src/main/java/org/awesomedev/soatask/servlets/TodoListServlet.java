@@ -1,4 +1,6 @@
-package org.awesomedev.soatask;
+package org.awesomedev.soatask.servlets;
+
+import org.awesomedev.soatask.services.todo.TodoServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

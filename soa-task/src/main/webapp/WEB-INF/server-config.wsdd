@@ -1,7 +1,7 @@
 <deployment xmlns="http://xml.apache.org/axis/wsdd/"
             xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
     <service name="TodoService" provider="java:RPC">
-        <parameter name="className" value="org.awesomedev.soatask.TodoServiceImpl"/>
+        <parameter name="className" value="org.awesomedev.soatask.services.todo.TodoServiceImpl"/>
         <parameter name="allowedMethods" value="*"/>
     </service>
     <transport name="http">

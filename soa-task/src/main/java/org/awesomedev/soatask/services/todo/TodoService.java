@@ -1,4 +1,4 @@
-package org.awesomedev.soatask;
+package org.awesomedev.soatask.services.todo;
 
 import javax.jws.WebMethod;
 import javax.jws.WebService;

@@ -1,9 +1,9 @@
-package org.awesomedev.soatask;
+package org.awesomedev.soatask.services.todo;
 
 import javax.jws.WebService;
 import java.util.ArrayList;
 
-@WebService(endpointInterface = "org.awesomedev.soatask.TodoService")
+@WebService(endpointInterface = "org.awesomedev.soatask.services.todo.TodoService")
 public class TodoServiceImpl implements TodoService {
     private static final ArrayList<String> todos = new ArrayList<>();
 
