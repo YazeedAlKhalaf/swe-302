@@ -23,6 +23,8 @@ public class TodoListServlet extends HttpServlet {
             out.println("<li>" + todo + "</li>");
         }
         out.println("</ul>");
+        out.println("</br>");
+        out.println("<a href=\"add-todo\">Add a New Todo</a>");
         out.println("</body></html>");
     }
 }
