@@ -19,7 +19,7 @@ public class TodoListServlet extends HttpServlet {
         out.println("<html><body>");
         out.print("<h1>View Your Todos :D</h1>");
         out.println("<ul>");
-        for (String todo : TodoService.getTodos()) {
+        for (String todo : new TodoServiceImpl().getTodoList()) {
             out.println("<li>" + todo + "</li>");
         }
         out.println("</ul>");

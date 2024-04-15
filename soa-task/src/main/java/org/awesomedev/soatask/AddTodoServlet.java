@@ -19,7 +19,7 @@ public class AddTodoServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         final String todo = req.getParameter("todo");
 
-        TodoService.addTodo(todo);
+        new TodoServiceImpl().addTodo(todo);
 
         resp.setContentType("text/html");
         PrintWriter out = resp.getWriter();

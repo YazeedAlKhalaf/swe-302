@@ -1,13 +1,14 @@
 package org.awesomedev.soatask;
 
+import javax.jws.WebMethod;
+import javax.jws.WebService;
 import java.util.ArrayList;
 
-public class TodoService {
-    static final private ArrayList<String> todos = new ArrayList<String>();
+@WebService
+public interface TodoService {
+    @WebMethod
+    ArrayList<String> getTodoList();
 
-    static ArrayList<String> getTodos() { return todos; }
-
-    static public void addTodo(String todo) {
-        todos.add(todo);
-    }
+    @WebMethod
+    void addTodo(String todo);
 }
