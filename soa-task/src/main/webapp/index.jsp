@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Todo Service Dashboard</title>
+    <title>Todo Service | Dashboard</title>
 </head>
 <body>
 
