@@ -7,7 +7,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 
 @WebServlet(name = "todoListServlet", value= "/todo-list")
 public class TodoListServlet extends HttpServlet {
