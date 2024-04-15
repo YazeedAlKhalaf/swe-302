@@ -2,11 +2,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>JSP - Hello World</title>
+    <title>Todo Service Dashboard</title>
 </head>
 <body>
-<h1><%= "Hello World!" %></h1>
-<br/>
-<a href="hello-servlet">Hello Servlet</a>
+
+<h1>Welcome to the Todo Service :D</h1>
+<p>Manage your tasks efficiently and effectively.</p>
+<ul>
+    <li><a href="todo-list">View Todo List</a></li>
+    <li><a href="add-todo">Add a New Todo</a></li>
+</ul>
+
 </body>
 </html>
