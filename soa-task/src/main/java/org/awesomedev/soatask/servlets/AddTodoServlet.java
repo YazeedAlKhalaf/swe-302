@@ -28,7 +28,7 @@ public class AddTodoServlet extends HttpServlet {
         out.println("<html><body>");
         out.println("<h1>Todo added successfully!</h1>");
         out.println("<p>New todo: " + todo + "</p>");
-        out.println("<a href=\"/todo-list\">View all todos</a>");
+        out.println("<a href=\"/todo-list.jsp\">View all todos</a>");
         out.println("</body></html>");
     }
 }
